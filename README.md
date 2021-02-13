@@ -1,2 +1,3 @@
-# MDUI × Baidu
-This is the Baidu search engine with the Material Design thanks to [Baidu](https://baidu.com), [MDUI](https://mdui.org), and [waterblock79](https://github.com/waterblock79)
+# GalaxyMainpage
+This is the GalaxyMainpage.  
+Copyright 2019-2021 © Galaxy
