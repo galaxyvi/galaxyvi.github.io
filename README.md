@@ -1,4 +1,4 @@
-# bgs-tool
-Burger工具站
+# Delta's Homepage
+ItzDelta的主页
 
-这是由 Burger Studio 开发的一个小工具站，基于MDUI设计。
+这是由 Skyline Studio/SkyblockFurries 开发的一个基于MDUI设计的主页
