@@ -1,0 +1,151 @@
+<!doctype html>
+<html> 
+	<head> 
+		<meta charset="UTF-8"> 
+		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"> 
+		<title>Burger工具站</title> 
+		<link rel="shortcut  icon" href="images/BGS_LOGO_20210919_WHITE.png" type="image/x-icon"> 
+		<link rel="stylesheet" href="mdui/css/mdui.min.css"> 
+		<script src="mdui/js/mdui.min.js"></script> 
+      	<style>
+        .mdui-tooltip{
+        border-radius: 20px;
+        background-color: #EEEEEE;
+        color:black;
+        }
+        .mdui-card{
+        border-radius: 15px;
+        margin: 16px;
+        padding: 8px;
+        animation-name: card;
+        animation-duration: 1s;
+        }
+        @keyframes card{
+        from {top: 64px;opacity: 0;}
+        to {top: 0;opacity: 1;}
+        }
+        @keyframes toleft{
+        from {margin-left: 64px;opacity: 0;}
+        to {}
+        }
+        @keyframes toright{
+        from {margin-right: 64px;opacity: 0;}
+        to {}
+        }
+        .toleft{
+        animation-name: toleft;
+        animation-duration: 0.5s;
+        }
+        .toright{
+        animation-name: toright;
+        animation-duration: 0.5s;
+        }
+        html{
+        scroll-behavior:smooth;
+        }
+        footer{
+        border-radius: 10px 10px 0 0;
+        width: 100%;
+        text-align: center;
+        height: auto;
+        margin-top: 48px;
+        }
+        .mdui-btn,.opacity{
+        animation-name: opacity;
+        animation-duration: 1s;
+        }
+		@keyframes opacity{
+		from  {opacity: 0;}
+		to {opacity: 1;}
+		}
+		.img{
+		animation-name: img;
+		animation-duration: 1s;
+		}
+		@keyframes img{
+		from {width: 75%;}
+		to {width: 100%;}
+		}
+        </style>
+	</head> 
+	<body class="mdui-theme-primary-blue mdui-theme-accent-blue mdui-theme-layout-auto mdui-appbar-with-toolbar">  
+   		<header>
+         	<div class="mdui-appbar mdui-appbar-fixed">
+            	<div class="mdui-toolbar mdui-color-theme-accent">
+               		<a class="mdui-typo-title opacity" onclick="window.scrollTo(0,0)">Burger工具站 历史版本</a>
+                    <div class="mdui-toolbar-spacer"></div>
+                    <button class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '切换主题'}" onclick="theme()">
+                    	<i class="mdui-icon material-icons">brightness_medium</i>
+                    </button>
+               	</div>
+            </div>
+         </header>
+         <div class="mdui-card mdui-shadow-24">
+         		<div class="mdui-card-header">
+               		<img class="mdui-card-header-avatar" src="images/shsidlogo.png">
+                   	<div class="mdui-card-header-title">Delta_Rain</div>
+                    <div class="mdui-card-header-subtitle">School.</div>
+               	</div>
+                <div class="mdui-card-media" style="animation-name: card;animation-duration: 1s;">
+                	<img src="images/shsidlogo.png" style="border-radius: 10px;max-height: 512px;max-width: 384px;margin-left: auto;margin-right: auto;" class="mdui-shadow-6 mdui-img-fluid img">
+                </div>
+                <div class="mdui-card-primary">
+                	<div class="mdui-card-primary-title">Stuff</div>
+                </div>
+         		<div class="mdui-card-content">
+               		This is a random page u found. All review stuff.
+                </div>
+                <div class="mdui-card-actions mdui-card-actions-stacked">
+                	<a href="https://rxmcm.com/404" class="mdui-btn mdui-ripple mdui-text-color-theme-accent mdui-ripple-blue mdui-text-color-theme-text">7S Science</a>
+                   </a>
+                </div>
+         </div>
+         <script>
+            var pageHeight =10;
+            window.onscroll =function () {
+                var backTop = document.documentElement.scrollTop || 
+                document.body.scrollTop;
+                if(backTop>pageHeight){
+                    show()
+                }else{
+                    hide()
+                }
+            }
+    </script>
+    <script>
+    	var fab = document.getElementById('fab');
+    	function show(){
+    	fab.classList.remove('mdui-fab-hide');
+		}
+    	function hide(){
+    	fab.classList.add('mdui-fab-hide');
+		}
+    </script>
+    <footer class="mdui-color-theme-accent">
+    	<br>
+       	<a class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" href="mailto:3321262302@qq.com" mdui-tooltip="{content: 'QQ Mail'}">
+        <i class="mdui-icon material-icons">email</i>
+        </a>
+        <br><br>
+        <div class="mdui-typo">
+        <p><label>Theme：<a href="https://www.mdui.org/" class="mdui-color-yellow">MDUI</a></label></p>
+        </div>
+       	<p style="font-size: 15px;font-weight: bold;">2021 - SkyLine Studio</p>
+        <br><br>
+    </footer>
+	</body>
+   	<script>
+      	if (localStorage.getItem('darkTheme') == 'true' || new Date().getHours() >= 22 || new Date().getHours() < 6){
+    		document.body.classList.add('mdui-theme-layout-dark');
+		}
+    	function theme(){
+    		if (localStorage.getItem('darkTheme') == 'true'){
+    			document.body.classList.remove('mdui-theme-layout-dark');
+             	localStorage.removeItem('darkTheme');
+			}else{
+    			document.body.classList.add('mdui-theme-layout-dark');
+             	localStorage.setItem('darkTheme','true');
+			}
+		}
+    </script>
+</html>
